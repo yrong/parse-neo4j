@@ -62,4 +62,4 @@ function to64BitsIntegerString(high, low) {
     return (isNegative?"-":"") + result;
 }
 
-export {to64BitsIntegerString}
+module.exports = {to64BitsIntegerString}

@@ -2,7 +2,7 @@
  * Created by keyvan on 8/27/16.
  */
 
-import {to64BitsIntegerString} from './integer64';
+const {to64BitsIntegerString} = require('./integer64')
 
 function * keyValues(obj) {
     for (const key of Object.keys(obj))
@@ -17,7 +17,7 @@ function * enumerate(array) {
     }
 }
 
-const hasProperties = obj => obj.properties && obj.identity && obj.identity.low;
+const hasProperties = obj => obj.properties && obj.identity;
 
 const parseRecord = record => {
     // If null or value
@@ -80,4 +80,4 @@ const parse = neo4jHttpResponse => {
     }
 };
 
-export {parse, parseRecord};
+module.exports = {parse, parseRecord};
